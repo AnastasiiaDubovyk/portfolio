@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anastasiia Dubovyk — AI video, content &amp; SMM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--ink:#f4f4f0;--mut:#8d8d88;--line:#232323;--acc:#d1fe17;--card:#0c0c0c;--r:22px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.55 Manrope,system-ui,sans-serif}
+h1,h2,h3,.logo,.tab{font-family:Unbounded,Impact,sans-serif}
+a{color:inherit}
+header{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:14px clamp(16px,4vw,48px);background:linear-gradient(#000c,#0000)}
+.logo{font-weight:900;font-size:15px;text-decoration:none}
+.logo i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--acc);margin-right:8px}
+nav{display:flex;gap:6px;background:#111c;backdrop-filter:blur(12px);padding:5px;border-radius:99px;border:1px solid var(--line)}
+.tab{font-size:12px;font-weight:500;color:var(--mut);background:none;border:0;padding:9px 16px;border-radius:99px;cursor:pointer}
+.tab:hover{color:var(--ink)}.tab[aria-selected=true]{background:var(--acc);color:#000}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.page{display:none;padding:0 clamp(16px,4vw,48px) 80px}.page.on{display:block}
+/* hero */
+.hero{position:relative;min-height:100svh;margin:0 calc(-1*clamp(16px,4vw,48px));display:flex;align-items:flex-end;overflow:hidden}
+.reels{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.reels video{width:100%;height:100%;object-fit:cover;filter:saturate(1.1)}
+.reels video:nth-child(2){transform:translateY(-6%) scale(1.1)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(#0000 25%,#000d 70%,#000)}
+.hero .in{position:relative;z-index:2;padding:0 clamp(16px,4vw,48px) 56px;max-width:1200px}
+h1{font-weight:900;font-size:clamp(38px,8.5vw,112px);line-height:.95;letter-spacing:-.03em;text-transform:uppercase}
+h1 span{color:var(--acc)}
+.lead{max-width:560px;color:#cfcfca;margin:22px 0 28px;font-size:18px}
+.btn{display:inline-block;font:700 14px Manrope;padding:15px 26px;border-radius:99px;text-decoration:none;background:var(--acc);color:#000;border:0;cursor:pointer;margin-right:8px}
+.btn.o{background:none;color:var(--ink);border:1px solid #444}
+.btn:hover{filter:brightness(1.1)}
+h2{font-size:clamp(28px,4.4vw,56px);font-weight:900;line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:90px 0 12px}
+.sub{color:var(--mut);max-width:620px;margin-bottom:32px}
+/* rails + cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.card{position:relative;aspect-ratio:9/16;border-radius:var(--r);overflow:hidden;background:var(--card);border:1px solid var(--line);cursor:pointer;display:block;width:100%;padding:0;color:inherit;text-align:left}
+.card video,.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover video,.card:hover img{transform:scale(1.05)}
+.card .cap{position:absolute;inset:auto 0 0;padding:60px 18px 18px;background:linear-gradient(#0000,#000e)}
+.card h3{font-size:15px;font-weight:700}.card p{font-size:13px;color:#bbb;margin-top:4px}
+.tag{position:absolute;top:14px;left:14px;z-index:2;font:700 11px Manrope;background:#000a;backdrop-filter:blur(8px);padding:6px 11px;border-radius:99px}
+.play{position:absolute;top:14px;right:14px;z-index:2;width:34px;height:34px;border-radius:50%;background:var(--acc);display:grid;place-items:center;color:#000;font-size:11px}
+.sq{aspect-ratio:1}
+.live{animation:kb 14s ease-in-out infinite alternate}
+.card:nth-child(2) .live{animation-delay:-4s}.card:nth-child(3) .live{animation-delay:-8s}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.14) translate(-2%,-1%)}}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.yt{aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;position:relative;background:#111;border:1px solid var(--line)}
+.yt iframe,.yt button{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt button{background:#000 center/cover no-repeat;cursor:pointer}
+.yt button b{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:var(--acc);color:#000;display:grid;place-items:center}
+/* about */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.sk{border:1px solid var(--line);border-radius:var(--r);padding:28px;background:var(--card)}
+.sk h3{font-size:20px;margin-bottom:12px;color:var(--acc)}.sk li{margin:0 0 8px 18px;color:#d6d6d1}
+.about{padding-top:130px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.about video{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r)}
+.contact{margin-top:80px;border-radius:var(--r);background:var(--acc);color:#000;padding:clamp(28px,6vw,70px)}
+.contact h2{margin:0 0 18px}.contact a{font:900 clamp(18px,3vw,32px) Unbounded;text-decoration:none;display:block;margin-top:8px;border-bottom:3px solid #000;width:fit-content}
+/* modal */
+dialog{border:0;background:#000;color:var(--ink);padding:0;border-radius:var(--r);max-width:min(94vw,440px);width:100%;overflow:hidden}
+dialog::backdrop{background:#000d}
+dialog video{width:100%;max-height:82svh;display:block;background:#000}
+dialog button{position:absolute;top:10px;right:10px;z-index:3;border:0;border-radius:50%;width:38px;height:38px;background:var(--acc);font-weight:900;cursor:pointer}
+footer{margin-top:60px;color:var(--mut);font-size:13px;border-top:1px solid var(--line);padding-top:20px}
+@media(max-width:760px){.split,.about{grid-template-columns:1fr}.reels{grid-template-columns:1fr 1fr}.reels video:nth-child(3){display:none}.tab{padding:8px 11px;font-size:11px}.logo b{display:none}}
+@media(prefers-reduced-motion:reduce){.live{animation:none}.card video,.card img{transition:none}html{scroll-behavior:auto}}
+</style></head><body>
+<header><a class="logo" href="#reel"><i></i><b>ANASTASIIA DUBOVYK</b></a>
+<nav role="tablist"><button class="tab" role="tab" data-p="reel" aria-selected="true">Showreel</button><button class="tab" role="tab" data-p="work" aria-selected="false">Work</button><button class="tab" role="tab" data-p="about" aria-selected="false">About</button></nav></header>
+
+<main>
+<!-- PAGE 1 -->
+<section class="page on" id="reel">
+ <div class="hero"><div class="reels">
+  <video src="media/series-loop.mp4" poster="media/series-full-poster.jpg" autoplay muted loop playsinline></video>
+  <video src="media/doctor-loop.mp4" poster="media/doctor-full-poster.jpg" autoplay muted loop playsinline></video>
+  <video src="media/reel-loop.mp4" poster="media/reel-full-poster.jpg" autoplay muted loop playsinline></video></div>
+  <div class="in"><h1>AI video <span>that sells</span> beauty &amp; fashion</h1>
+  <p class="lead">AI video editor, content manager and SMM specialist. I turn a script and a few frames into vertical stories people finish watching.</p>
+  <button class="btn" data-go="work">See the work</button><a class="btn o" href="#contact" data-go="about">Hire me</a></div></div>
+ <h2>Fashion stills, alive</h2><p class="sub">A night-city luxury series: jewelry, gesture, light. Generated as stills, then given motion.</p>
+ <div class="grid">
+  <div class="card sq"><img class="live" src="media/night-1.jpg" alt="Close-up portrait with gold earring and choker, city bokeh"><div class="cap"><h3>Gold hour</h3><p>Jewelry close-up</p></div></div>
+  <div class="card sq"><img class="live" src="media/night-2.jpg" alt="Two hands resting together, gold watch and cuff"><div class="cap"><h3>Held</h3><p>Detail shot</p></div></div>
+  <div class="card sq"><img class="live" src="media/night-3.jpg" alt="Couple in a car at night, city lights through glass"><div class="cap"><h3>After dark</h3><p>Wide scene</p></div></div>
+ </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page" id="work">
+ <h2 style="margin-top:130px">Selected work</h2><p class="sub">Hover to preview. Tap to watch the full video with sound.</p>
+ <div class="grid">
+  <button class="card" data-v="media/doctor-full.mp4"><span class="tag">Expert interview</span><span class="play">▶</span><video src="media/doctor-loop.mp4" poster="media/doctor-full-poster.jpg" muted loop playsinline preload="metadata"></video><div class="cap"><h3>Skincare expert, talking head</h3><p>Subtitles, B-roll inserts, color-graded set. 78 sec</p></div></button>
+  <button class="card" data-v="media/series-full.mp4"><span class="tag">Short drama</span><span class="play">▶</span><video src="media/series-loop.mp4" poster="media/series-full-poster.jpg" muted loop playsinline preload="metadata"></video><div class="cap"><h3>TV show, episode 1</h3><p>Scripted scene with burned-in subtitles. 72 sec</p></div></button>
+  <button class="card" data-v="media/reel-full.mp4"><span class="tag">Product reel</span><span class="play">▶</span><video src="media/reel-loop.mp4" poster="media/reel-full-poster.jpg" muted loop playsinline preload="metadata"></video><div class="cap"><h3>Beauty product reel</h3><p>Macro B-roll, treatment details. 16 sec</p></div></button>
+ </div>
+ <h2>Animated explainer</h2><p class="sub">A Pixar-style character series explaining what acne really is: hormones, sebum, microbiome, barrier, stress, food. Built as stills with on-screen captions for Reels and Shorts.</p>
+ <div class="grid">
+  <div class="card"><span class="tag">Hook</span><img class="live" src="media/acne-3.jpg" alt="Animated girl worried about acne"></div>
+  <div class="card"><span class="tag">Breakdown</span><img class="live" src="media/acne-2.jpg" alt="Nine characters representing acne factors"></div>
+  <div class="card"><span class="tag">Topic</span><img class="live" src="media/acne-1.jpg" alt="Animated girl reading a book about acne"></div>
+ </div>
+ <h2>On YouTube</h2><p class="sub">Longer pieces and channel content.</p>
+ <div class="split">
+  <div class="yt"><button data-yt="U3wjdVLCyGo" style="background-image:url(https://i.ytimg.com/vi/U3wjdVLCyGo/hqdefault.jpg)" aria-label="Play YouTube video 1"><b>▶</b></button></div>
+  <div class="yt"><button data-yt="sMyELVM8KC0" style="background-image:url(https://i.ytimg.com/vi/sMyELVM8KC0/hqdefault.jpg)" aria-label="Play YouTube video 2"><b>▶</b></button></div>
+ </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page" id="about">
+ <div class="about"><div><h1 style="font-size:clamp(34px,6vw,76px)">I make AI look <span>human</span></h1>
+  <p class="lead">I plan, generate, edit and publish. One person covers the idea, the visuals, the cut and the posting schedule, so campaigns ship fast and look like one brand.</p></div>
+  <video src="media/doctor-loop.mp4" autoplay muted loop playsinline></video></div>
+ <h2>What I do</h2>
+ <div class="skills">
+  <div class="sk"><h3>AI video editor</h3><ul><li>Image-to-video and consistent characters</li><li>Cutting, pacing, subtitles, sound</li><li>Vertical 9:16 for Reels, Shorts, TikTok</li></ul></div>
+  <div class="sk"><h3>Content manager</h3><ul><li>Scripts, storyboards, shot lists</li><li>Content plans and series formats</li><li>Expert-led and educational content</li></ul></div>
+  <div class="sk"><h3>SMM specialist</h3><ul><li>Hooks, captions and covers</li><li>Publishing across platforms</li><li>Beauty, fashion and jewelry niches</li></ul></div>
+ </div>
+ <div class="contact" id="contact"><h2>Let’s make something</h2><p>Open for full-time and project work.</p>
+  <a href="mailto:adorosko578@gmail.com">adorosko578@gmail.com</a><a href="https://t.me/andubovyk">@andubovyk</a></div>
+ <footer>© Anastasiia Dubovyk</footer>
+</section>
+</main>
+
+<dialog id="dlg"><button aria-label="Close">✕</button><video controls playsinline></video></dialog>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+function show(id){$$('.page').forEach(p=>p.classList.toggle('on',p.id===id));$$('.tab').forEach(t=>t.setAttribute('aria-selected',t.dataset.p===id));scrollTo(0,0);
+ $$('.page.on video[autoplay]').forEach(v=>v.play().catch(()=>{}))}
+$$('.tab').forEach(t=>t.onclick=()=>{show(t.dataset.p);history.replaceState(0,'','#'+t.dataset.p)});
+$$('[data-go]').forEach(b=>b.onclick=e=>{show(b.dataset.go)});
+const h=location.hash.slice(1);if(['reel','work','about'].includes(h))show(h);
+$$('.card video').forEach(v=>{const c=v.parentElement;c.onmouseenter=()=>v.play().catch(()=>{});c.onmouseleave=()=>{v.pause();v.currentTime=0}});
+if(matchMedia('(hover:none)').matches)$$('.card video').forEach(v=>v.play().catch(()=>{}));
+const d=$('#dlg'),dv=d.querySelector('video');
+$$('[data-v]').forEach(c=>c.onclick=()=>{dv.src=c.dataset.v;d.showModal();dv.play()});
+const close=()=>{dv.pause();dv.removeAttribute('src');d.close()};
+d.querySelector('button').onclick=close;d.onclick=e=>{if(e.target===d)close()};d.onclose=()=>dv.pause();
+$$('[data-yt]').forEach(b=>b.onclick=()=>{const f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?autoplay=1&rel=0';f.allow='autoplay;encrypted-media;fullscreen';f.allowFullscreen=true;b.replaceWith(f)});
+</script></body></html>
